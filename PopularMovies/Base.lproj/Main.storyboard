@@ -1,25 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="6185.10" systemVersion="14A360a" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="NO" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PopularMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1244" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="weS-bF-Mky">
+                                <rect key="frame" x="0.0" y="0.0" width="1244" height="700"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eNg-3W-cNK">
+                                    <size key="itemSize" width="389" height="592"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCell" id="Rb6-s1-MiP" customClass="MovieCell" customModule="PopularMovies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78" width="343" height="545"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="545"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie_poster" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56H-JX-xv7">
+                                                    <rect key="frame" x="32" y="16" width="280" height="422"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="280" id="Gwu-gN-opp"/>
+                                                        <constraint firstAttribute="height" constant="422" id="gCz-DF-n7e"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Terminator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtA-2M-qpv">
+                                                    <rect key="frame" x="8" y="478" width="327" height="59"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QtA-2M-qpv" secondAttribute="trailing" constant="8" id="ZR9-yC-rit"/>
+                                            <constraint firstItem="QtA-2M-qpv" firstAttribute="leading" secondItem="Rb6-s1-MiP" secondAttribute="leading" constant="8" id="ePN-Gf-kZ0"/>
+                                            <constraint firstItem="QtA-2M-qpv" firstAttribute="top" secondItem="56H-JX-xv7" secondAttribute="bottom" constant="40" id="qiw-d6-c5Z"/>
+                                            <constraint firstItem="56H-JX-xv7" firstAttribute="centerX" secondItem="Rb6-s1-MiP" secondAttribute="centerX" id="ub7-2v-RcW"/>
+                                            <constraint firstAttribute="bottom" secondItem="QtA-2M-qpv" secondAttribute="bottom" constant="8" id="wo8-Bg-GL1"/>
+                                            <constraint firstItem="56H-JX-xv7" firstAttribute="top" secondItem="Rb6-s1-MiP" secondAttribute="topMargin" constant="8" id="x1Z-E5-FYd"/>
+                                        </constraints>
+                                        <size key="customSize" width="343" height="545"/>
+                                        <connections>
+                                            <outlet property="movieImage" destination="56H-JX-xv7" id="f7B-yS-nAi"/>
+                                            <outlet property="movieLabel" destination="QtA-2M-qpv" id="D9k-zs-T8P"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="weS-bF-Mky" secondAttribute="trailing" id="AM0-hC-ole"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="weS-bF-Mky" secondAttribute="bottom" id="Cx2-Hn-4Vu"/>
+                            <constraint firstItem="weS-bF-Mky" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UBR-yN-eqV"/>
+                            <constraint firstItem="weS-bF-Mky" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vnS-7W-mps"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1244" height="700"/>
+                    <connections>
+                        <outlet property="collectionView" destination="weS-bF-Mky" id="gIB-Nw-UaN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="565" y="479"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="movie_poster" width="186" height="271"/>
+    </resources>
 </document>
