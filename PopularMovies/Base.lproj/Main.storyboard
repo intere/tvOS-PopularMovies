@@ -61,6 +61,7 @@
                                         <connections>
                                             <outlet property="movieImage" destination="56H-JX-xv7" id="f7B-yS-nAi"/>
                                             <outlet property="movieLabel" destination="QtA-2M-qpv" id="D9k-zs-T8P"/>
+                                            <segue destination="oLr-U1-ZQ4" kind="show" identifier="movieDetailSegue" id="2bw-rb-MP0"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -83,6 +84,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="565" y="479"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="y7y-KY-na4">
+            <objects>
+                <viewController id="oLr-U1-ZQ4" customClass="MovieDetailViewController" customModule="PopularMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="acQ-0D-iQg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Or5-Rz-hGQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="84U-gI-hUd">
+                        <rect key="frame" x="0.0" y="0.0" width="1244" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie_poster" translatesAutoresizingMaskIntoConstraints="NO" id="U1Y-ya-w0S">
+                                <rect key="frame" x="20" y="163" width="250" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="FBg-AV-aIx"/>
+                                    <constraint firstAttribute="width" constant="250" id="I0d-Pa-Vmq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Terminator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAs-cY-aYY">
+                                <rect key="frame" x="20" y="95" width="1204" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe5-tQ-Twh">
+                                <rect key="frame" x="290" y="163" width="934" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="AUY-wE-Nix"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="375" id="brk-dz-eIs"/>
+                                </constraints>
+                                <string key="text">A human-looking indestructible cyborg is sent from 2029 to 1984 to assassinate a waitress, whose unborn son will lead humanity in a war against the machines, while a soldier from that war is sent to protect her at all costs.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Pe5-tQ-Twh" firstAttribute="leading" secondItem="U1Y-ya-w0S" secondAttribute="trailing" constant="20" id="4Gx-dU-dqU"/>
+                            <constraint firstItem="tAs-cY-aYY" firstAttribute="trailing" secondItem="84U-gI-hUd" secondAttribute="trailingMargin" id="F4D-Ip-jW3"/>
+                            <constraint firstItem="U1Y-ya-w0S" firstAttribute="centerY" secondItem="84U-gI-hUd" secondAttribute="centerY" id="HC6-eT-vch"/>
+                            <constraint firstAttribute="trailing" secondItem="Pe5-tQ-Twh" secondAttribute="trailing" constant="20" id="NJj-fy-cVI"/>
+                            <constraint firstItem="Pe5-tQ-Twh" firstAttribute="top" secondItem="tAs-cY-aYY" secondAttribute="bottom" constant="8" id="Vr5-Uf-p3P"/>
+                            <constraint firstItem="tAs-cY-aYY" firstAttribute="leading" secondItem="84U-gI-hUd" secondAttribute="leadingMargin" id="dR3-7y-la7"/>
+                            <constraint firstItem="U1Y-ya-w0S" firstAttribute="leading" secondItem="84U-gI-hUd" secondAttribute="leadingMargin" id="oge-sH-JLH"/>
+                            <constraint firstItem="U1Y-ya-w0S" firstAttribute="top" secondItem="tAs-cY-aYY" secondAttribute="bottom" constant="8" id="uFD-Hb-GVU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="movieImageView" destination="U1Y-ya-w0S" id="3lB-k5-zCK"/>
+                        <outlet property="movieOverviewLabel" destination="Pe5-tQ-Twh" id="GsL-fP-6cX"/>
+                        <outlet property="movieTitleLabel" destination="tAs-cY-aYY" id="QoU-pD-gnW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRw-5E-eOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2227" y="479"/>
         </scene>
     </scenes>
     <resources>

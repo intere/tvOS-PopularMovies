@@ -73,11 +73,11 @@ class MovieManager: NSObject {
         return components.URL
     }
 
-    func buildImageUrl(imageName: String) -> NSURL? {
+    func buildImageUrl(imageName: String, width: Int) -> NSURL? {
         let components = NSURLComponents()
         components.scheme = "http"
         components.host = "image.tmdb.org"
-        components.path = "/t/p/w500\(imageName)"
+        components.path = "/t/p/w\(width)\(imageName)"
 
         return components.URL
     }

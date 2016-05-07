@@ -28,9 +28,11 @@ private extension MovieCell {
         movieLabel.text = movie.title
         movieImage.image = nil
 
-        guard let moviePosterURL = MovieManager.sharedManager.buildImageUrl(movie.posterPath) else {
+        guard let moviePosterURL = MovieManager.sharedManager.buildImageUrl(movie.posterPath, width: 500) else {
             return
         }
+
+        print("loading image: \(moviePosterURL)")
 
         dispatch_async(dispatch_get_global_queue(0, 0)) { 
             if let data = NSData(contentsOfURL: moviePosterURL) {

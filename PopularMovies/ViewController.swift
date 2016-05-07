@@ -86,7 +86,19 @@ extension ViewController {
 
     func tapped(gesture: UITapGestureRecognizer) {
         if let cell = gesture.view as? MovieCell {
-            print("You selected the movie: \(cell.movie.title)")
+            performSegueWithIdentifier("movieDetailSegue", sender: cell)
+        }
+    }
+
+}
+
+// MARK: - Navigation
+
+extension ViewController {
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let movieDetailVC = segue.destinationViewController as? MovieDetailViewController, movieCell = sender as? MovieCell {
+            movieDetailVC.movie = movieCell.movie
         }
     }
 
